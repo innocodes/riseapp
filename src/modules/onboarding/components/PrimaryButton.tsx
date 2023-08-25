@@ -8,6 +8,7 @@ function PrimaryButton({
   textColor = '' as string,
   backgroundColor = '' as string,
   title = '' as string,
+  textWeight = '' as string,
 }) {
   return (
     <TouchableOpacity
@@ -28,6 +29,7 @@ function PrimaryButton({
       <Text
         style={{
           color: textColor,
+          fontWeight: textWeight,
           // justifyContent: 'center'
         }}>
         {title}

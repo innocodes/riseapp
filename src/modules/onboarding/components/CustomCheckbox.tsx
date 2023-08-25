@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {TouchableOpacity, View, StyleSheet, Text} from 'react-native';
 import {palette} from '../../../theme';
 
@@ -9,6 +9,10 @@ interface CustomCheckboxProps {
 
 const CustomCheckbox: React.FC<CustomCheckboxProps> = ({checked, onChange}) => {
   const [isChecked, setIsChecked] = useState(checked);
+
+  useEffect(() => {
+    setIsChecked(checked);
+  }, [checked]);
 
   const toggleCheckbox = () => {
     const newValue = !isChecked;

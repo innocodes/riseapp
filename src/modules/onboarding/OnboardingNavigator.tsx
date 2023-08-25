@@ -8,6 +8,7 @@ import {
   DSignUpScreen,
   EMoreAboutYouScreen,
   FAccountCreatedScreen,
+  GSignInScreen,
 } from './screens';
 
 const onboardingStoriesScreens: {name: string; component: any}[] = [
@@ -17,6 +18,7 @@ const onboardingStoriesScreens: {name: string; component: any}[] = [
   {name: 'DSignUpScreen', component: DSignUpScreen},
   {name: 'EMoreAboutYouScreen', component: EMoreAboutYouScreen},
   {name: 'FAccountCreatedScreen', component: FAccountCreatedScreen},
+  {name: 'GSignInScreen', component: GSignInScreen},
 ];
 
 export const OnboardStories = () => {
@@ -26,8 +28,7 @@ export const OnboardStories = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-      }}
-    >
+      }}>
       {onboardingStoriesScreens.map((screen, index) => (
         <Stack.Screen
           key={index}

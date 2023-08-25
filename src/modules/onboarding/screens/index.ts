@@ -5,6 +5,7 @@ import CBetterPerformanceScreen from './CBetterPerformanceScreen';
 import DSignUpScreen from './DSignUpScreen';
 import EMoreAboutYouScreen from './EMoreAboutYouScreen';
 import FAccountCreatedScreen from './FAccountCreatedScreen';
+import GSignInScreen from './GSignInScreen';
 
 export {
   SplashScreen,
@@ -14,4 +15,5 @@ export {
   DSignUpScreen,
   EMoreAboutYouScreen,
   FAccountCreatedScreen,
+  GSignInScreen
 };

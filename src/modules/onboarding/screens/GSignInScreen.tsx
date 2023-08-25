@@ -1,49 +1,31 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, StatusBar, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  StatusBar,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import {family, palette} from '../../../theme';
 import {TextInput} from 'react-native-paper';
 import PrimaryButton from '../components/PrimaryButton';
-import CustomCheckbox from '../components/CustomCheckbox';
 
-export default function DSignUpScreen({navigation}: any) {
+export default function GSignInScreen({navigation}: any) {
   const [emailAddress, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
   const [proceed, setProceed] = useState(false);
   const [hidePassword, setHidePassword] = useState(false);
-  const [isMinLengthValid, setIsMinLengthValid] = useState(false);
-  const [isUppercaseValid, setIsUppercaseValid] = useState(false);
-  const [isSpecialCharacterValid, setIsSpecialCharacterValid] = useState(false);
-  const [passwordOkay, setPasswordOkay] = useState(false);
+  false;
 
   const handlePasswordChange = (newPassword: string) => {
     setPassword(newPassword);
-    validatePassword(newPassword);
-  };
-
-  const validatePassword = (value: string) => {
-    console.log('Validating password:', value);
-    setIsMinLengthValid(value.length >= 8);
-    setIsUppercaseValid(/[A-Z]/.test(value));
-    setIsSpecialCharacterValid(/[!@#$%^&*?]/.test(value));
   };
 
   useEffect(() => {
-    if (isMinLengthValid && isUppercaseValid && isSpecialCharacterValid) {
-      setPasswordOkay(true);
-    } else {
-      setPasswordOkay(false);
-    }
-    if (emailAddress !== '' && passwordOkay) {
+    if (emailAddress !== '' && password !== '') {
       setProceed(true);
     }
-  }, [
-    isMinLengthValid,
-    isUppercaseValid,
-    isSpecialCharacterValid,
-    proceed,
-    emailAddress,
-    passwordOkay,
-  ]);
+  }, [proceed, emailAddress, password]);
 
   const handleSignUp = () => {
     navigation.navigate('EMoreAboutYouScreen');
@@ -56,9 +38,10 @@ export default function DSignUpScreen({navigation}: any) {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={palette.white} barStyle={'dark-content'} />
-      <Text style={styles.headingText}>Create an account</Text>
+      <Text style={styles.headingText}>Welcome back</Text>
       <Text style={styles.bodyText}>
-        Start building your dollar-denominated {'\n'}investment portfolio{' '}
+        Let's get you logged in to get back to building{'\n'}your
+        dollar-denominated investment portfolio.
       </Text>
 
       {/*Email Input*/}
@@ -93,29 +76,38 @@ export default function DSignUpScreen({navigation}: any) {
         }
       />
 
-      <View style={styles.check}>
-        <CustomCheckbox checked={isMinLengthValid} />
-        <Text style={styles.checkboxText}>Minimum of 8 characters</Text>
-      </View>
-      <View style={styles.check}>
-        <CustomCheckbox checked={isUppercaseValid} />
-        <Text style={styles.checkboxText}>One UPPERCASE character</Text>
-      </View>
-      <View style={{...styles.check, marginBottom: 15}}>
-        <CustomCheckbox checked={isSpecialCharacterValid} />
-        <Text style={styles.checkboxText}>
-          One unique character (e.g. !@#$%^&*?)
-        </Text>
-      </View>
-
       <PrimaryButton
         textColor={palette.white}
         backgroundColor={proceed ? palette.teal : 'rgba(8, 152, 160, 0.3)'}
         onPrimaryButtonPress={() => {
           handleSignUp();
         }}
-        title="Sign Up"
+        title="Sign In"
       />
+
+      <View style={{flex: 1, width: '90%'}}>
+        <PrimaryButton
+          textColor={palette.teal}
+          backgroundColor={palette.white}
+          onPrimaryButtonPress={() => {
+            handleSignUp();
+          }}
+          title="I forgot my password"
+          textWeight={'700'}
+        />
+      </View>
+
+      <View style={styles.noAccount}>
+        <Text style={styles.noAccountText}>Don't have an account? </Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('DSignUpScreen');
+          }}>
+          <Text style={{color: palette.teal, ...styles.noAccountText}}>
+            Sign Up
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -155,21 +147,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     color: palette.outerSpace,
   },
-  check: {
-    margin: 4,
-    marginLeft: '6%',
-    alignSelf: 'flex-start',
-    alignItems: 'center',
+  noAccount: {
     flexDirection: 'row',
+    marginBottom: 30,
   },
-  checkboxText: {
-    marginLeft: 10,
-    width: '90%',
-    fontSize: 13,
-    fontWeight: '400',
-    backgroundColor: '#fff',
-    color: palette.black,
-    lineHeight: 19,
-    fontFamily: family.DMSans,
+  noAccountText: {
+    fontWeight: '700',
+    textAlign: 'center',
   },
 });

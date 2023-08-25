@@ -14,4 +14,5 @@ export const palette = {
   outerSpace: '#292F33',
   slateGray: '#718796',
   lynch: '#71879C',
+  daintree: '#012224',
 };

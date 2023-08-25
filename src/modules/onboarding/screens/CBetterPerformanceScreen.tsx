@@ -76,6 +76,7 @@ export default function CBetterPerformanceScreen({navigation}: any) {
           backgroundColor={'rgba(113, 135, 156, 0.1)'}
           textColor={palette.teal}
           title="Sign In"
+          onPrimaryButtonPress={() => navigation.navigate('GSignInScreen')}
         />
       </View>
     </View>
