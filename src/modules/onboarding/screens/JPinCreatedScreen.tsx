@@ -4,29 +4,10 @@ import {family, palette} from '../../../theme';
 import PrimaryButton from '../components/PrimaryButton';
 import ACCOUNTCREATEDSVG from './../../../../assets/images/svgs/AccountCreated.svg';
 
-
-
-export default function FAccountCreatedScreen({navigation}: any) {
-  const [proceed, setProceed] = useState(false);
-
-
-  const handlePasswordChange = (newPassword: string) => {
-    setPassword(newPassword);
-    validatePassword(newPassword);
-  };
-
-  const validatePassword = (value: string) => {
-    console.log('Validating password:', value);
-
-  };
-
+export default function JPinCreatedScreen({navigation}: any) {
   const handleOkayButton = () => {
-    navigation.navigate('HCreatePinScreen');
+    navigation.navigate('FAccountCreatedScreen');
   };
-
-  // useEffect(() => {
-  //   // validatePassword(password);
-  // }, [password]);
 
   return (
     <View style={styles.container}>
@@ -34,9 +15,10 @@ export default function FAccountCreatedScreen({navigation}: any) {
       <View style={{marginTop: 100}}>
         <ACCOUNTCREATEDSVG style={{width: 40, alignSelf: 'center'}} />
       </View>
-      <Text style={styles.headingText}>You just created your{'\n'}Rise account</Text>
+      <Text style={styles.headingText}>You've created your PIN</Text>
       <Text style={styles.bodyText}>
-        Welcome to Rise, let's take{'\n'}you home
+        Keep your account safe with your{'\n'} secret PIN. Do not share this PIN
+        {'\n'}with anyone.
       </Text>
 
       <View style={{marginBottom: 30, width: '90%'}}>

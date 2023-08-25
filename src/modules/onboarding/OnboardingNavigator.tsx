@@ -9,6 +9,9 @@ import {
   EMoreAboutYouScreen,
   FAccountCreatedScreen,
   GSignInScreen,
+  HCreatePinScreen,
+  IConfirmPinScreen,
+  JPinCreatedScreen,
 } from './screens';
 
 const onboardingStoriesScreens: {name: string; component: any}[] = [
@@ -19,6 +22,9 @@ const onboardingStoriesScreens: {name: string; component: any}[] = [
   {name: 'EMoreAboutYouScreen', component: EMoreAboutYouScreen},
   {name: 'FAccountCreatedScreen', component: FAccountCreatedScreen},
   {name: 'GSignInScreen', component: GSignInScreen},
+  {name: 'HCreatePinScreen', component: HCreatePinScreen},
+  {name: 'IConfirmPinScreen', component: IConfirmPinScreen},
+  {name: 'JPinCreatedScreen', component: JPinCreatedScreen},
 ];
 
 export const OnboardStories = () => {

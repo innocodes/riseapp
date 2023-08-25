@@ -6,6 +6,9 @@ import DSignUpScreen from './DSignUpScreen';
 import EMoreAboutYouScreen from './EMoreAboutYouScreen';
 import FAccountCreatedScreen from './FAccountCreatedScreen';
 import GSignInScreen from './GSignInScreen';
+import HCreatePinScreen from './HCreatePinScreen';
+import IConfirmPinScreen from './IConfirmPinScreen';
+import JPinCreatedScreen from './JPinCreatedScreen';
 
 export {
   SplashScreen,
@@ -15,5 +18,8 @@ export {
   DSignUpScreen,
   EMoreAboutYouScreen,
   FAccountCreatedScreen,
-  GSignInScreen
+  GSignInScreen,
+  HCreatePinScreen,
+  IConfirmPinScreen,
+  JPinCreatedScreen,
 };
