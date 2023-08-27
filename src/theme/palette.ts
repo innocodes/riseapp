@@ -17,4 +17,5 @@ export const palette = {
   daintree: '#012224',
   athensGray: '#E4E7EB',
   gullGray: '#94A1AD',
+  amour: '#F8E8F4',
 };

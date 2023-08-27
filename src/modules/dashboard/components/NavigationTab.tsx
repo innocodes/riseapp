@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
 import HOMESVG from '../../../../assets/images/svgs/HomeIcon.svg';
 import PLANSSVG from '../../../../assets/images/svgs/PlansIcon.svg';
 import WALLETSVG from '../../../../assets/images/svgs/WalletIcon.svg';
@@ -26,7 +25,7 @@ const NavigationTab = ({navigation}: any) => {
           <View style={styles.navigationTabItems}>
             <HOMESVG
               style={{
-                opacity: focusKey === 1 ? 1 : 0.5,
+                opacity: focusKey === 1 ? 1 : 0.8,
                 marginTop: -5,
               }}
             />
@@ -39,7 +38,7 @@ const NavigationTab = ({navigation}: any) => {
               height: 9,
               alignSelf: 'center',
               marginTop: 10,
-              opacity: focusKey === 1 ? 1 : 0.5,
+              opacity: focusKey === 1 ? 1 : 0.8,
             }}
           />
         </TouchableOpacity>
@@ -49,14 +48,14 @@ const NavigationTab = ({navigation}: any) => {
           <View style={styles.navigationTabItems}>
             <PLANSSVG
               style={{
-                opacity: focusKey === 2 ? 1 : 0.5,
+                opacity: focusKey === 2 ? 1 : 0.8,
               }}
             />
           </View>
           <Text
             style={{
               ...styles.navigationTabItemIcons,
-              opacity: focusKey === 2 ? 1 : 0.5,
+              opacity: focusKey === 2 ? 1 : 0.8,
             }}>
             Plans
           </Text>
@@ -67,14 +66,14 @@ const NavigationTab = ({navigation}: any) => {
           <View style={styles.navigationTabItems}>
             <WALLETSVG
               style={{
-                opacity: focusKey === 3 ? 1 : 0.5,
+                opacity: focusKey === 3 ? 1 : 0.8,
               }}
             />
           </View>
           <Text
             style={{
               ...styles.navigationTabItemIcons,
-              opacity: focusKey === 3 ? 1 : 0.5,
+              opacity: focusKey === 3 ? 1 : 0.8,
             }}>
             Wallet
           </Text>
@@ -85,14 +84,14 @@ const NavigationTab = ({navigation}: any) => {
           <View style={styles.navigationTabItems}>
             <FEEDSVG
               style={{
-                opacity: focusKey === 4 ? 1 : 0.5,
+                opacity: focusKey === 4 ? 1 : 0.8,
               }}
             />
           </View>
           <Text
             style={{
               ...styles.navigationTabItemIcons,
-              opacity: focusKey === 4 ? 1 : 0.5,
+              opacity: focusKey === 4 ? 1 : 0.8,
             }}>
             Feed
           </Text>
@@ -103,7 +102,7 @@ const NavigationTab = ({navigation}: any) => {
           <View style={styles.navigationTabItems}>
             <Image
               style={{
-                opacity: focusKey === 5 ? 1 : 0.5,
+                opacity: focusKey === 5 ? 1 : 0.8,
                 width: 25,
                 height: 25,
               }}
@@ -113,7 +112,7 @@ const NavigationTab = ({navigation}: any) => {
           <Text
             style={{
               ...styles.navigationTabItemIcons,
-              opacity: focusKey === 5 ? 1 : 0.5,
+              opacity: focusKey === 5 ? 1 : 0.8,
             }}>
             Account
           </Text>
