@@ -8,7 +8,7 @@ function PrimaryButton({
   textColor = '' as string,
   backgroundColor = '' as string,
   title = '' as string,
-  textWeight = '' as string,
+  textWeight = '400' as string,
 }) {
   return (
     <TouchableOpacity

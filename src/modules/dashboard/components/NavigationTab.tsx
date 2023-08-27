@@ -38,7 +38,7 @@ const NavigationTab = ({navigation}: any) => {
               height: 9,
               alignSelf: 'center',
               marginTop: 10,
-              opacity: focusKey === 1 ? 1 : 0.8,
+              opacity: focusKey === 1 ? 1 : 0.5,
             }}
           />
         </TouchableOpacity>

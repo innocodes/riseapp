@@ -11,6 +11,7 @@ export const palette = {
   dew: '#F6FFFE',
   carouselPink: '#FDF4F9',
   mineShaft: '#222222',
+  mineShaftTwo: '#333333',
   outerSpace: '#292F33',
   slateGray: '#718796',
   lynch: '#71879C',
@@ -18,4 +19,5 @@ export const palette = {
   athensGray: '#E4E7EB',
   gullGray: '#94A1AD',
   amour: '#F8E8F4',
+  forestGreen: '#27BF41',
 };

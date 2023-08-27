@@ -5,16 +5,13 @@ import {
   Text,
   StatusBar,
   StyleSheet,
-  Image, TouchableOpacity
-} from "react-native";
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {useFocusEffect} from '@react-navigation/native';
 import {family, palette} from '../../../theme';
 import speedometer from './../../../../assets/images/speedometer.png';
-import BackButton from '../components/BackButton';
-import NextButton from '../components/NextButton';
-import NEXTARROWSVG from '../../../../assets/images/svgs/ANextArrow.svg';
-import BACKARROWSVG from '../../../../assets/images/svgs/BackArrow.svg';
-import PrimaryButton from "../components/PrimaryButton";
+import PrimaryButton from '../components/PrimaryButton';
 
 export default function CBetterPerformanceScreen({navigation}: any) {
   useFocusEffect(
@@ -33,10 +30,7 @@ export default function CBetterPerformanceScreen({navigation}: any) {
   );
   return (
     <View style={styles.container}>
-      <StatusBar
-        backgroundColor={palette.dew}
-        barStyle={'dark-content'}
-      />
+      <StatusBar backgroundColor={palette.dew} barStyle={'dark-content'} />
       <Image
         source={speedometer}
         width={300}
