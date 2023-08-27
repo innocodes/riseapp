@@ -12,17 +12,6 @@ export default function EMoreAboutYouScreen({navigation}: any) {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [proceed, setProceed] = useState(false);
 
-
-  const handlePasswordChange = (newPassword: string) => {
-    setPassword(newPassword);
-    validatePassword(newPassword);
-  };
-
-  const validatePassword = (value: string) => {
-    console.log('Validating password:', value);
-
-  };
-
   useEffect(() => {
     if (
       firstname !== '' &&

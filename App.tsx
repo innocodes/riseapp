@@ -10,11 +10,12 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {OnboardingScreens} from './src/modules/onboarding/OnboardingNavigator';
+import {dashboardScreens} from './src/modules/dashboard/DashboardNavigator';
 
 export default function App() {
   const Stack = createStackNavigator();
 
-  const screens = [...OnboardingScreens];
+  const screens = [...OnboardingScreens, ...dashboardScreens];
   return (
     <NavigationContainer>
       <Stack.Navigator

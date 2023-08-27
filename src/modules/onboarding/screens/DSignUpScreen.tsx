@@ -85,11 +85,13 @@ export default function DSignUpScreen({navigation}: any) {
         selectionColor="#2E6DA8"
         outlineColor="#cdcdcd"
         right={
-          <TextInput.Icon
-            name={hidePassword ? 'eye-off' : 'eye'}
-            color={palette.teal}
+          // <TextInput.Icon
+            // name={hidePassword ? 'eye-off' : 'eye'}
+            // color={palette.teal}
             // onPress={() => setHidePassword(!hidePassword)}
-          />
+            // icon={hidePassword ? 'eye-off' : 'eye'}
+            // icon={'eye'}
+          {/*/>*/}
         }
       />
 

@@ -15,4 +15,6 @@ export const palette = {
   slateGray: '#718796',
   lynch: '#71879C',
   daintree: '#012224',
+  athensGray: '#E4E7EB',
+  gullGray: '#94A1AD',
 };

@@ -1,35 +1,40 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, StatusBar, StyleSheet} from 'react-native';
 import {family, palette} from '../../../theme';
-import PrimaryButton from '../components/PrimaryButton';
-import ACCOUNTCREATEDSVG from './../../../../assets/images/svgs/AccountCreated.svg';
+// import PrimaryButton from '../components/PrimaryButton';
+import WALLETSVG from '../../../../assets/images/svgs/WalletIcon.svg';
 
-export default function JPinCreatedScreen({navigation}: any) {
+export default function WalletScreen({navigation}: any) {
   const handleOkayButton = () => {
-    navigation.navigate('DashboardTabs');
+    navigation.navigate('HCreatePinScreen');
   };
+
+  // useEffect(() => {
+  //   // validatePassword(password);
+  // }, [password]);
 
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={palette.white} barStyle={'dark-content'} />
       <View style={{marginTop: 100}}>
-        <ACCOUNTCREATEDSVG style={{width: 40, alignSelf: 'center'}} />
+        <WALLETSVG style={{width: 40, alignSelf: 'center'}} />
       </View>
-      <Text style={styles.headingText}>You've created your PIN</Text>
+      <Text style={styles.headingText}>
+        WALLET
+      </Text>
       <Text style={styles.bodyText}>
-        Keep your account safe with your{'\n'} secret PIN. Do not share this PIN
-        {'\n'}with anyone.
+        Coming Soon
       </Text>
 
       <View style={{marginBottom: 30, width: '90%'}}>
-        <PrimaryButton
-          textColor={palette.white}
-          backgroundColor={palette.teal}
-          onPrimaryButtonPress={() => {
-            handleOkayButton();
-          }}
-          title="Okay"
-        />
+        {/*<PrimaryButton*/}
+        {/*  textColor={palette.white}*/}
+        {/*  backgroundColor={palette.teal}*/}
+        {/*  onPrimaryButtonPress={() => {*/}
+        {/*    handleOkayButton();*/}
+        {/*  }}*/}
+        {/*  title="Okay"*/}
+        {/*/>*/}
       </View>
     </View>
   );
