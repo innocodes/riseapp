@@ -28,7 +28,7 @@ export default function GSignInScreen({navigation}: any) {
   }, [proceed, emailAddress, password]);
 
   const handleSignUp = () => {
-    navigation.navigate('EMoreAboutYouScreen');
+    navigation.navigate('DashboardStack');
   };
 
   // useEffect(() => {

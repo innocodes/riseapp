@@ -10,17 +10,19 @@ import {family, palette} from '../../../theme';
 import PrimaryButton from '../../shared/components/PrimaryButton';
 import BACKARROWSVG from './../../../../assets/images/svgs/LeftBackArrow.svg';
 import CAUTIONSVG from './../../../../assets/images/svgs/informationOutline.svg';
-import {TextInput} from 'react-native-paper';
+import {LineChart} from 'react-native-gifted-charts';
 
 export default function ReviewScreen({navigation}: any) {
-  const handleContinueButton = () => {
-    navigation.navigate('ReviewScreen');
-  };
+  // const handleContinueButton = () => {
+  //   navigation.navigate('ReviewScreen');
+  // };
 
   const [withdrawDate, setWithdrawDate] = useState('');
   const [amount, setAmount] = useState('10,930.75');
   const [investmentAmount, setInvestmentAmount] = useState('50,400');
   const [returnsAmount, setReturnsAmount] = useState('20,803');
+
+  const data = [{value:50}, {value:80}, {value:90}, {value:70} ];
 
   return (
     <View style={styles.container}>
@@ -116,6 +118,12 @@ export default function ReviewScreen({navigation}: any) {
         </Text>
       </View>
       <View style={{width: '90%', alignItems: 'center', marginTop: 20}} />
+
+      <View>
+        {/*<BarChart data = {data} />*/}
+        {/*<LineChart data = {data} />*/}
+        {/*<PieChart data = {data} />*/}
+      </View>
 
       <View
         style={{

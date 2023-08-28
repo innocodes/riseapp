@@ -5,8 +5,8 @@ import PrimaryButton from '../../shared/components/PrimaryButton';
 import ACCOUNTCREATEDSVG from './../../../../assets/images/svgs/AccountCreated.svg';
 
 export default function PlanCreatedScreen({navigation}: any) {
-  const handleOkayButton = () => {
-    navigation.navigate('DashboardTabs');
+  const handleViewPlanButton = () => {
+    navigation.navigate('');
   };
 
   return (
@@ -15,10 +15,9 @@ export default function PlanCreatedScreen({navigation}: any) {
       <View style={{marginTop: 100}}>
         <ACCOUNTCREATEDSVG style={{width: 40, alignSelf: 'center'}} />
       </View>
-      <Text style={styles.headingText}>You've created your PIN</Text>
+      <Text style={styles.headingText}>You just created your plan</Text>
       <Text style={styles.bodyText}>
-        Keep your account safe with your{'\n'} secret PIN. Do not share this PIN
-        {'\n'}with anyone.
+        Well done, Deborah
       </Text>
 
       <View style={{marginBottom: 30, width: '90%'}}>
@@ -26,9 +25,9 @@ export default function PlanCreatedScreen({navigation}: any) {
           textColor={palette.white}
           backgroundColor={palette.teal}
           onPrimaryButtonPress={() => {
-            handleOkayButton();
+            handleViewPlanButton();
           }}
-          title="Okay"
+          title="View plan"
         />
       </View>
     </View>
