@@ -9,6 +9,7 @@ import {
 import {family, palette} from '../../../theme';
 import PrimaryButton from '../../shared/components/PrimaryButton';
 import BACKARROWSVG from './../../../../assets/images/svgs/LeftBackArrow.svg';
+import CAUTIONSVG from './../../../../assets/images/svgs/informationOutline.svg';
 import {TextInput} from 'react-native-paper';
 
 export default function ReviewScreen({navigation}: any) {
@@ -17,7 +18,9 @@ export default function ReviewScreen({navigation}: any) {
   };
 
   const [withdrawDate, setWithdrawDate] = useState('');
-
+  const [amount, setAmount] = useState('10,930.75');
+  const [investmentAmount, setInvestmentAmount] = useState('50,400');
+  const [returnsAmount, setReturnsAmount] = useState('20,803');
 
   return (
     <View style={styles.container}>
@@ -37,20 +40,20 @@ export default function ReviewScreen({navigation}: any) {
             borderRadius: 50,
             backgroundColor: 'rgba(113.24, 134.71, 156.19, 0.10)',
             justifyContent: 'center',
-            flex: 1,
+            // flex: 1,
             // marginRight: 20,
           }}>
           <BACKARROWSVG style={{width: 15, height: 15, alignSelf: 'center'}} />
-          {/*<CLOSESVG style={{width: 15, height: 15, alignSelf: 'center'}} />*/}
         </TouchableOpacity>
-        <View style={{flex: 7, marginLeft: 70, justifyContent: 'center'}}>
+        <View style={{justifyContent: 'center'}}>
           <Text
             style={{
-              textAlign: 'left',
+              textAlign: 'center',
               fontSize: 24,
               fontWeight: '700',
               color: palette.black,
               lineHeight: 26,
+              alignSelf: 'center',
             }}>
             Review
           </Text>
@@ -67,46 +70,122 @@ export default function ReviewScreen({navigation}: any) {
         }}>
         Kate Ventures
       </Text>
-      <View
-        style={{width: '90%', alignItems: 'center', marginTop: 20,}}
-      >
-
+      <Text
+        style={{
+          fontSize: 24,
+          lineHeight: 26,
+          fontWeight: '700',
+          textAlign: 'center',
+          width: '90%',
+          color: palette.black,
+        }}>
+        ${amount}
+      </Text>
+      <Text
+        style={{
+          marginTop: 5,
+          fontSize: 15,
+          lineHeight: 22,
+          color: palette.mineShaftTwo,
+          textAlign: 'center',
+          width: '90%',
+          fontWeight: '400',
+        }}>
+        by 20 June 2021
+      </Text>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between', width: '80%', marginTop: 20,}}>
+        <Text
+          style={{
+            fontSize: 15,
+            lineHeight: 22,
+            color: palette.lynch,
+            // textAlign: 'center',
+            // width: '90%',
+          }}>
+          Investments • ${investmentAmount}
+        </Text>
+        <Text
+          style={{
+            fontSize: 15,
+            lineHeight: 22,
+            color: palette.lynch,
+            // textAlign: 'center',
+            // width: '90%',
+          }}>
+          Returns • ${returnsAmount}
+        </Text>
       </View>
-
+      <View style={{width: '90%', alignItems: 'center', marginTop: 20}} />
 
       <View
         style={{
           marginTop: 25,
           width: '90%',
-
         }}>
-        <View style={{
-          width: '100%',
-
-        }}>
-          <Text style={styles.textTitle}>When do you want to withdraw?</Text>
-          <TextInput
-            style={styles.textInputBody}
-            mode="outlined"
-            // label="Investments"
-            placeholder="Choose a date"
-            value={withdrawDate}
-            onChangeText={txt => {
-              setWithdrawDate(txt);
-            }}
-            selectionColor={palette.teal}
-            outlineColor={palette.teal}
-          />
+        <View
+          style={{
+            width: '100%',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+          <Text style={styles.textTitle}>Estimated monthly investment</Text>
+          <Text style={{...styles.textTitle, color: palette.black}}>$120</Text>
         </View>
       </View>
-      <View style={{marginTop: 20, marginBottom: 30, width: '100%'}}>
+      <View
+        style={{
+          marginTop: 20,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+          backgroundColor: 'rgba(113.24, 134.71, 156.19, 0.05)',
+          padding: 10,
+          borderRadius: 8,
+        }}>
+        <CAUTIONSVG style={{width: 15, height: 15, alignSelf: 'center', marginLeft: 20}} />
+        <Text
+          style={{
+            color: palette.lynch,
+            fontSize: 15,
+            fontFamily: family.DMSans,
+            lineHeight: 22,
+            fontWeight: '400',
+            marginRight: 30,
+          }}>
+          Returns not guaranteed. Investing{'\n'}involves risk. Read our
+          Disclosures.
+        </Text>
+      </View>
+      <Text
+        style={{
+          color: palette.lynch,
+          fontSize: 12,
+          fontFamily: family.DMSans,
+          fontWeight: '400',
+          marginTop: 20,
+          textAlign: 'center',
+        }}>
+        These are your starting settings, they can always be {'\n'} updated.
+      </Text>
+      <View
+        style={{
+          marginBottom: 30,
+          marginTop: 30,
+          width: '100%',
+        }}>
         <PrimaryButton
-          textColor={palette.white}
           backgroundColor={palette.teal}
-          onPrimaryButtonPress={() => {
-            handleContinueButton();
-          }}
-          title="Continue"
+          textColor={palette.white}
+          textWeight={'700'}
+          title="Agree & Continue"
+          onPrimaryButtonPress={() => navigation.navigate('PlanCreatedScreen')}
+        />
+        <PrimaryButton
+          backgroundColor={'rgba(113, 135, 156, 0.1)'}
+          textColor={palette.teal}
+          textWeight={'700'}
+          title="Start Over"
+          onPrimaryButtonPress={() => navigation.navigate('CreatePlanScreen')}
         />
       </View>
     </View>
@@ -141,7 +220,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     flex: 1,
   },
-  textTitle: {marginTop: 30, fontSize: 15, fontWeight: '700', color: palette.mineShaft},
+  textTitle: {
+    marginTop: 30,
+    fontSize: 15,
+    fontWeight: '400',
+    color: palette.lynch,
+    lineHeight: 22,
+  },
   textInputBody: {
     marginTop: 10,
     width: '100%',
