@@ -41,7 +41,9 @@ export default function DashboardScreen({navigation}: any) {
   //   // validatePassword(password);
   // }, [password]);
 
-  const onAddMoneyBtnPress = () => {};
+  const onAddMoneyBtnPress = () => {
+    navigation.navigate('WalletScreen');
+  };
 
   return (
     <ScrollView
@@ -189,11 +191,15 @@ export default function DashboardScreen({navigation}: any) {
               }}>
               <View style={styles.focusEllipsis} />
               <TouchableOpacity
-                onPress={() => navigation.navigate('BSuperiorSelectionScreen')}
+                onPress={() => {
+                  // navigation.navigate("BSuperiorSelectionScreen");
+                }}
                 style={{...styles.backgroundEllipsis, marginHorizontal: 6}}
               />
               <TouchableOpacity
-                onPress={() => navigation.navigate('CBetterPerformanceScreen')}
+                onPress={() => {
+                  // navigation.navigate("CBetterPerformanceScreen");
+                }}
                 style={styles.backgroundEllipsis}
               />
             </View>

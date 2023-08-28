@@ -40,7 +40,9 @@ export default function PlansScreen({navigation}: any) {
   //   // validatePassword(password);
   // }, [password]);
 
-  const onAddMoneyBtnPress = () => {};
+  const onAddMoneyBtnPress = () => {
+    navigation.navigate('SelectPlanScreen');
+  };
 
   return (
     <ScrollView
@@ -266,6 +268,79 @@ export default function PlansScreen({navigation}: any) {
           justifyContent: 'space-between',
           width: '90%',
         }}>
+        <Text style={styles.totalEarnings}>Total earnings</Text>
+        <Text style={{color: palette.black, paddingVertical: 10}}>
+          $12,000.09
+        </Text>
+      </View>
+      <View style={styles.straightRule} />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+        }}>
+        <Text style={styles.totalEarnings}>Current earnings</Text>
+        <Text style={{color: palette.black, paddingVertical: 10}}>
+          $12,000.09
+        </Text>
+      </View>
+      <View style={styles.straightRule} />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+        }}>
+        <Text style={styles.totalEarnings}>Deposit value</Text>
+        <Text style={{color: palette.black, paddingVertical: 10}}>
+          $50,543.09
+        </Text>
+      </View>
+      <View style={styles.straightRule} />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+        }}>
+        <Text style={styles.totalEarnings}>Balance in Naira(* 505)</Text>
+        <Text style={{color: palette.black, paddingVertical: 10}}>
+          ₦31,918,837.5
+        </Text>
+      </View>
+      <View style={styles.straightRule} />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+        }}>
+        <Text style={styles.totalEarnings}>Plan created on</Text>
+        <Text style={{color: palette.black, paddingVertical: 10}}>
+          23rd July 2019
+        </Text>
+      </View>
+      <View style={styles.straightRule} />
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+        }}>
+        <Text style={styles.totalEarnings}>Maturity date</Text>
+        <Text style={{color: palette.black, paddingVertical: 10}}>
+          24th July 2022
+        </Text>
+      </View>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+          marginTop: 10,
+        }}>
         <Text style={{color: palette.black, fontSize: 18, fontWeight: '400'}}>
           Recent transactions
         </Text>
@@ -281,32 +356,200 @@ export default function PlansScreen({navigation}: any) {
       </View>
       <View
         style={{
+          marginTop: 5,
+          marginBottom: 5,
           flexDirection: 'row',
           justifyContent: 'space-between',
           width: '90%',
         }}>
-        <Text>Total earnings</Text>
-        <Text>$12,000.09</Text>
-      </View>
-      <View
-        style={{
-          borderBottomWidth: 1,
-          borderBottomColor: palette.mineShaft,
-          width: '60%',
-        }}
-      />
-      <View style={{ marginTop: 5, marginBottom: 5, flexDirection: 'row', justifyContent: 'space-between', width: '90%'}}>
-        <View style={{alignSelf: 'center'}}>
-          <ARROWREDSVG style={{width: 40, alignSelf: 'center'}} />
+        <View
+          style={{
+            alignSelf: 'center',
+            backgroundColor: 'rgba(76, 217, 100, 0.15)',
+            borderRadius: 50,
+            width: 40,
+            height: 40,
+            justifyContent: 'center',
+          }}>
+          <ARROWGREENSVG style={{width: 40, alignSelf: 'center'}} />
         </View>
-        <View>
-          <Text>
+        <View style={{width: '60%', marginLeft: 10}}>
+          <Text
+            style={{lineHeight: 22, fontSize: 15, color: palette.mineShaftTwo}}>
             Received from Bank{'\n'}Account (BOSUN TONY{'\n'}ADEMOSU)
           </Text>
           <Text>Jul 6, 2021</Text>
         </View>
-        <View style={{alignSelf: 'center'}}>
-          <Text>+$320.90</Text>
+        <View style={{alignSelf: 'center', width: '20%'}}>
+          <Text
+            style={{
+              textAlign: 'right',
+              lineHeight: 22,
+              fontSize: 15,
+              color: palette.mineShaftTwo,
+            }}>
+            +$320.90
+          </Text>
+        </View>
+      </View><View
+        style={{
+          marginTop: 5,
+          marginBottom: 5,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+        }}>
+        <View
+          style={{
+            alignSelf: 'center',
+            backgroundColor: 'rgba(76, 217, 100, 0.15)',
+            borderRadius: 50,
+            width: 40,
+            height: 40,
+            justifyContent: 'center',
+          }}>
+          <ARROWREDSVG style={{width: 40, alignSelf: 'center'}} />
+        </View>
+        <View style={{width: '60%', marginLeft: 10}}>
+          <Text
+            style={{lineHeight: 22, fontSize: 15, color: palette.mineShaftTwo}}>
+            Sent to Bank Account{'\n'}(ADEBAYOU MUSILIU JAGUN)
+          </Text>
+          <Text>Jul 2, 2021</Text>
+        </View>
+        <View style={{alignSelf: 'center', width: '20%'}}>
+          <Text
+            style={{textAlign: 'right', lineHeight: 22, fontSize: 15, color: palette.mineShaftTwo}}>
+            -$2920.45
+          </Text>
+        </View>
+      </View><View
+        style={{
+          marginTop: 5,
+          marginBottom: 5,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+        }}>
+        <View
+          style={{
+            alignSelf: 'center',
+            backgroundColor: 'rgba(76, 217, 100, 0.15)',
+            borderRadius: 50,
+            width: 40,
+            height: 40,
+            justifyContent: 'center',
+          }}>
+          <ARROWREDSVG style={{width: 40, alignSelf: 'center'}} />
+        </View>
+        <View style={{width: '60%', marginLeft: 10}}>
+          <Text
+            style={{lineHeight: 22, fontSize: 15, color: palette.mineShaftTwo}}>
+            Sent to Service (PAYSTACK{'\n'}001WA00948 - AMARDA {'\n'}VENTURES LIMITED)
+          </Text>
+          <Text>Jun 27, 2021</Text>
+        </View>
+        <View style={{alignSelf: 'center', width: '20%'}}>
+          <Text
+            style={{textAlign: 'right', lineHeight: 22, fontSize: 15, color: palette.mineShaftTwo}}>
+            +$320.90
+          </Text>
+        </View>
+      </View><View
+        style={{
+          marginTop: 5,
+          marginBottom: 5,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+        }}>
+        <View
+          style={{
+            alignSelf: 'center',
+            backgroundColor: 'rgba(76, 217, 100, 0.15)',
+            borderRadius: 50,
+            width: 40,
+            height: 40,
+            justifyContent: 'center',
+          }}>
+          <ARROWGREENSVG style={{width: 40, alignSelf: 'center'}} />
+        </View>
+        <View style={{width: '60%', marginLeft: 10}}>
+          <Text
+            style={{lineHeight: 22, fontSize: 15, color: palette.mineShaftTwo}}>
+            Received from Bank{'\n'}Account (TITUS CLOPATRA{'\n'}MEDINA)
+          </Text>
+          <Text>Jun 19, 2021</Text>
+        </View>
+        <View style={{alignSelf: 'center', width: '20%'}}>
+          <Text
+            style={{textAlign: 'right', lineHeight: 22, fontSize: 15, color: palette.mineShaftTwo}}>
+            +$320.90
+          </Text>
+        </View>
+      </View><View
+        style={{
+          marginTop: 5,
+          marginBottom: 5,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+        }}>
+        <View
+          style={{
+            alignSelf: 'center',
+            backgroundColor: 'rgba(76, 217, 100, 0.15)',
+            borderRadius: 50,
+            width: 40,
+            height: 40,
+            justifyContent: 'center',
+          }}>
+          <ARROWGREENSVG style={{width: 40, alignSelf: 'center'}} />
+        </View>
+        <View style={{width: '60%', marginLeft: 10}}>
+          <Text
+            style={{lineHeight: 22, fontSize: 15, color: palette.mineShaftTwo}}>
+            Received from Rise Plan{'\n'}(SAVE FOR SCHOOL)
+          </Text>
+          <Text>Jun 19, 2021</Text>
+        </View>
+        <View style={{alignSelf: 'center', width: '20%'}}>
+          <Text
+            style={{textAlign: 'right', lineHeight: 22, fontSize: 15, color: palette.mineShaftTwo}}>
+            +$320.90
+          </Text>
+        </View>
+      </View><View
+        style={{
+          marginTop: 5,
+          marginBottom: 5,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+        }}>
+        <View
+          style={{
+            alignSelf: 'center',
+            backgroundColor: 'rgba(76, 217, 100, 0.15)',
+            borderRadius: 50,
+            width: 40,
+            height: 40,
+            justifyContent: 'center',
+          }}>
+          <ARROWGREENSVG style={{width: 40, alignSelf: 'center'}} />
+        </View>
+        <View style={{width: '60%', marginLeft: 10}}>
+          <Text
+            style={{lineHeight: 22, fontSize: 15, color: palette.mineShaftTwo}}>
+            Received from Bank{'\n'}Account (BOSUN TONY{'\n'}ADEMOSU)
+          </Text>
+          <Text>Jul 6, 2021</Text>
+        </View>
+        <View style={{alignSelf: 'center', width: '20%'}}>
+          <Text
+            style={{textAlign: 'right', lineHeight: 22, fontSize: 15, color: palette.mineShaftTwo}}>
+            +$320.90
+          </Text>
         </View>
       </View>
       <View style={{marginBottom: 120}} />
@@ -381,5 +624,15 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 22,
     color: palette.lynch,
+  },
+  straightRule: {
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(113, 135, 156, 0.2)',
+    width: '90%',
+  },
+  totalEarnings: {
+    fontSize: 15,
+    color: palette.lynch,
+    paddingVertical: 10,
   },
 });

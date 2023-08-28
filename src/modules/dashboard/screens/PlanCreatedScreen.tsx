@@ -6,7 +6,7 @@ import ACCOUNTCREATEDSVG from './../../../../assets/images/svgs/AccountCreated.s
 
 export default function PlanCreatedScreen({navigation}: any) {
   const handleViewPlanButton = () => {
-    navigation.navigate('');
+    navigation.navigate('PlansScreen');
   };
 
   return (

@@ -13,6 +13,9 @@ import {
   TargetDateScreen,
   ReviewScreen,
   PlanCreatedScreen,
+  SelectBankScreen,
+  SelectPlanScreen,
+  FundWalletScreen,
 } from './screens';
 import NavigationTab from './components/NavigationTab';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -35,6 +38,9 @@ export const noTabDashboardScreens: {name: string; component: any}[] = [
   {name: 'TargetDateScreen', component: TargetDateScreen},
   {name: 'ReviewScreen', component: ReviewScreen},
   {name: 'PlanCreatedScreen', component: PlanCreatedScreen},
+  {name: 'SelectPlanScreen', component: SelectPlanScreen},
+  {name: 'SelectBankScreen', component: SelectBankScreen},
+  {name: 'FundWalletScreen', component: FundWalletScreen},
 ];
 
 export const DashboardTabs = () => {

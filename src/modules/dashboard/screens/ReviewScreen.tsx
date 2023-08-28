@@ -5,12 +5,14 @@ import {
   StatusBar,
   StyleSheet,
   TouchableOpacity,
+  Image,
+  ScrollView,
 } from 'react-native';
 import {family, palette} from '../../../theme';
 import PrimaryButton from '../../shared/components/PrimaryButton';
 import BACKARROWSVG from './../../../../assets/images/svgs/LeftBackArrow.svg';
 import CAUTIONSVG from './../../../../assets/images/svgs/informationOutline.svg';
-import {LineChart} from 'react-native-gifted-charts';
+import PLANCHART from './../../../../assets/images/SCR-20230828-rxmb-2.png';
 
 export default function ReviewScreen({navigation}: any) {
   // const handleContinueButton = () => {
@@ -25,7 +27,11 @@ export default function ReviewScreen({navigation}: any) {
   const data = [{value:50}, {value:80}, {value:90}, {value:70} ];
 
   return (
-    <View style={styles.container}>
+    <ScrollView
+      contentContainerStyle={{
+        alignItems: 'center',
+      }}
+      style={styles.container}>
       <StatusBar backgroundColor={palette.white} barStyle={'dark-content'} />
       <View
         style={{
@@ -56,6 +62,7 @@ export default function ReviewScreen({navigation}: any) {
               color: palette.black,
               lineHeight: 26,
               alignSelf: 'center',
+              marginLeft: 70,
             }}>
             Review
           </Text>
@@ -123,6 +130,7 @@ export default function ReviewScreen({navigation}: any) {
         {/*<BarChart data = {data} />*/}
         {/*<LineChart data = {data} />*/}
         {/*<PieChart data = {data} />*/}
+        <Image source={PLANCHART} style={{width: 400, height: 240}} />
       </View>
 
       <View
@@ -196,7 +204,7 @@ export default function ReviewScreen({navigation}: any) {
           onPrimaryButtonPress={() => navigation.navigate('CreatePlanScreen')}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -204,7 +212,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: palette.white,
-    alignItems: 'center',
+    // alignItems: 'center',
   },
   headingText: {
     fontFamily: family.SpaceGrotesk,

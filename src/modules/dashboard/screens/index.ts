@@ -9,6 +9,9 @@ import TargetAmountScreen from './TargetAmountScreen';
 import TargetDateScreen from './TargetDateScreen';
 import ReviewScreen from './ReviewScreen';
 import PlanCreatedScreen from './PlanCreatedScreen';
+import SelectBankScreen from './SelectBankScreen';
+import SelectPlanScreen from './SelectPlanScreen';
+import FundWalletScreen from './FundWalletScreen';
 
 export {
   DashboardScreen,
@@ -22,4 +25,7 @@ export {
   TargetDateScreen,
   ReviewScreen,
   PlanCreatedScreen,
+  SelectBankScreen,
+  SelectPlanScreen,
+  FundWalletScreen,
 };

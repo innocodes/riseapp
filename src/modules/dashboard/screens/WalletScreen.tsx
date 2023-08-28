@@ -1,40 +1,34 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, StatusBar, StyleSheet} from 'react-native';
 import {family, palette} from '../../../theme';
-// import PrimaryButton from '../components/PrimaryButton';
-import WALLETSVG from '../../../../assets/images/svgs/WalletIcon.svg';
+import PrimaryButton from '../../shared/components/PrimaryButton';
+import ACCOUNTCREATEDSVG from './../../../../assets/images/svgs/AccountCreated.svg';
 
 export default function WalletScreen({navigation}: any) {
-  const handleOkayButton = () => {
-    navigation.navigate('HCreatePinScreen');
+  const handleViewPlanButton = () => {
+    navigation.navigate('FundWalletScreen');
   };
-
-  // useEffect(() => {
-  //   // validatePassword(password);
-  // }, [password]);
 
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={palette.white} barStyle={'dark-content'} />
       <View style={{marginTop: 100}}>
-        <WALLETSVG style={{width: 40, alignSelf: 'center'}} />
+        <ACCOUNTCREATEDSVG style={{width: 40, alignSelf: 'center'}} />
       </View>
-      <Text style={styles.headingText}>
-        WALLET
-      </Text>
+      <Text style={styles.headingText}>Welcome to your personalized wallet.</Text>
       <Text style={styles.bodyText}>
-        Coming Soon
+        Here, you will be directed on how to fund your wallet, among others.
       </Text>
 
-      <View style={{marginBottom: 30, width: '90%'}}>
-        {/*<PrimaryButton*/}
-        {/*  textColor={palette.white}*/}
-        {/*  backgroundColor={palette.teal}*/}
-        {/*  onPrimaryButtonPress={() => {*/}
-        {/*    handleOkayButton();*/}
-        {/*  }}*/}
-        {/*  title="Okay"*/}
-        {/*/>*/}
+      <View style={{marginBottom: 120, width: '90%'}}>
+        <PrimaryButton
+          textColor={palette.white}
+          backgroundColor={palette.teal}
+          onPrimaryButtonPress={() => {
+            handleViewPlanButton();
+          }}
+          title="Fund Wallet"
+        />
       </View>
     </View>
   );
