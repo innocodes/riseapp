@@ -13,10 +13,12 @@ import {TextInput} from 'react-native-paper';
 
 export default function GoalNameScreen({navigation}: any) {
   const handleContinueButton = () => {
-    navigation.navigate('DashboardTabs');
+    navigation.navigate('TargetAmountScreen');
   };
 
   const [savingGoal, setSavingGoal] = useState('');
+  const [progress, setProgress] = useState(0.33);
+
 
   return (
     <View style={styles.container}>
@@ -62,15 +64,26 @@ export default function GoalNameScreen({navigation}: any) {
           lineHeight: 22,
           color: palette.lynch,
           textAlign: 'left',
-          width: '80%',
+          width: '90%',
         }}>
         Question 1 of 3
       </Text>
+      <View
+        style={{width: '90%', alignItems: 'center', marginTop: 20,}}
+      >
+        <View style={{flexDirection: 'row'}}>
+          <View style={{borderTopLeftRadius: 50, borderBottomLeftRadius: 50, backgroundColor: palette.teal, width: '34%', height: 10}}></View>
+          <View style={{backgroundColor: 'rgba(113.24, 134.71, 156.19, 0.20)', width: '32%'}}></View>
+          <View style={{borderTopRightRadius: 50, borderBottomRightRadius: 50, backgroundColor: 'rgba(113.24, 134.71, 156.19, 0.20)', width: '34%'}}></View>
+
+        </View>
+      </View>
+
 
       <View
         style={{
           marginTop: 25,
-          width: '80%',
+          width: '90%',
 
         }}>
         <View style={{
@@ -81,17 +94,18 @@ export default function GoalNameScreen({navigation}: any) {
           <TextInput
             style={styles.textInputBody}
             mode="outlined"
-            label="Investments"
+            // label="Investments"
+            placeholder="Investments"
             value={savingGoal}
             onChangeText={txt => {
               setSavingGoal(txt);
             }}
-            selectionColor="#0898A0"
-            outlineColor="#cdcdcd"
+            selectionColor={palette.teal}
+            outlineColor={palette.teal}
           />
         </View>
       </View>
-      <View style={{marginTop: 20, marginBottom: 30, width: '90%'}}>
+      <View style={{marginTop: 20, marginBottom: 30, width: '100%'}}>
         <PrimaryButton
           textColor={palette.white}
           backgroundColor={palette.teal}
@@ -133,7 +147,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     flex: 1,
   },
-  textTitle: {fontSize: 15, fontWeight: '700', color: palette.mineShaft},
+  textTitle: {marginTop: 30, fontSize: 15, fontWeight: '700', color: palette.mineShaft},
   textInputBody: {
     marginTop: 10,
     width: '100%',
