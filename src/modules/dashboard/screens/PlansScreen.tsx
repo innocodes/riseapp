@@ -179,15 +179,41 @@ export default function PlansScreen({navigation}: any) {
           +$5,000.43 • +12.4%
         </Text>
       </View>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between', width: '90%', marginTop: 20, marginBottom: 5,}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+          marginTop: 20,
+          marginBottom: 5,
+        }}>
         <Text style={styles.innerText}>0.01 achieved</Text>
         <Text style={styles.innerText}>Target: $20,053.90</Text>
       </View>
       <View style={{flexDirection: 'row', width: '90%'}}>
-        <View style={{borderTopLeftRadius: 50, borderBottomLeftRadius: 50, backgroundColor: palette.teal, width: '6%', height: 6}}></View>
-        <View style={{backgroundColor: 'rgba(113.24, 134.71, 156.19, 0.20)', width: '70%'}}></View>
-        <View style={{borderTopRightRadius: 50, borderBottomRightRadius: 50, backgroundColor: 'rgba(113.24, 134.71, 156.19, 0.20)', width: '24%'}}></View>
-
+        <View
+          style={{
+            borderTopLeftRadius: 50,
+            borderBottomLeftRadius: 50,
+            backgroundColor: palette.teal,
+            width: '6%',
+            height: 6,
+          }}
+        />
+        <View
+          style={{
+            backgroundColor: 'rgba(113.24, 134.71, 156.19, 0.20)',
+            width: '70%',
+          }}
+        />
+        <View
+          style={{
+            borderTopRightRadius: 50,
+            borderBottomRightRadius: 50,
+            backgroundColor: 'rgba(113.24, 134.71, 156.19, 0.20)',
+            width: '24%',
+          }}
+        />
       </View>
       <View
         style={{
@@ -195,7 +221,9 @@ export default function PlansScreen({navigation}: any) {
           borderRadius: 20,
           marginTop: 30,
         }}>
-        <Text style={{padding: 5, paddingHorizontal: 10}}>Results are updated monthly</Text>
+        <Text style={{padding: 5, paddingHorizontal: 10}}>
+          Results are updated monthly
+        </Text>
       </View>
       <TouchableOpacity style={styles.addMoneyBtn} onPress={onAddMoneyBtnPress}>
         <Text
@@ -221,7 +249,15 @@ export default function PlansScreen({navigation}: any) {
       </TouchableOpacity>
 
       <View style={{}}>
-        <Image source={PLANSCHART} style={{marginVertical: 20, width: 345, height: 448, borderRadius: 12,}}/>
+        <Image
+          source={PLANSCHART}
+          style={{
+            marginVertical: 20,
+            width: 345,
+            height: 448,
+            borderRadius: 12,
+          }}
+        />
       </View>
 
       <View
@@ -229,165 +265,51 @@ export default function PlansScreen({navigation}: any) {
           flexDirection: 'row',
           justifyContent: 'space-between',
           width: '90%',
-          backgroundColor: palette.white,
-          borderRadius: 12,
-          alignSelf: 'center',
-          paddingHorizontal: 12,
-          height: 66,
-          shadowColor: 'rgba(113.24, 134.71, 156.19, 0.10)',
-          shadowRadius: 20,
         }}>
-        <View
+        <Text style={{color: palette.black, fontSize: 18, fontWeight: '400'}}>
+          Recent transactions
+        </Text>
+        <Text
           style={{
-            alignSelf: 'center',
-            justifyContent: 'center',
+            color: palette.teal,
+            fontWeight: '700',
+            fontSize: 14,
+            fontFamily: family.DMSans,
           }}>
-          <QUESTIONMARKSVG style={{alignSelf: 'center'}} />
-        </View>
-        <View
-          style={{
-            alignSelf: 'center',
-            justifyContent: 'center',
-          }}>
-          <Text>Need help?</Text>
-        </View>
-        <View
-          style={{
-            backgroundColor: palette.teal,
-            borderRadius: 6,
-            height: 42,
-            width: 123,
-            alignSelf: 'center',
-            justifyContent: 'center',
-          }}>
-          <Text
-            style={{
-              color: palette.white,
-              alignSelf: 'center',
-              textAlign: 'center',
-            }}>
-            Contact us
-          </Text>
-        </View>
+          View all
+        </Text>
       </View>
-
       <View
         style={{
-          borderRadius: 15,
-          backgroundColor: palette.teal,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
           width: '90%',
-          marginVertical: 30,
-          borderWidth: 1,
-          borderColor: 'rgba(64, 187, 195, 0.15)',
         }}>
-        <Text
-          style={{
-            color: palette.white,
-            fontSize: 14,
-            fontWeight: '700',
-            padding: 20,
-          }}>
-          TODAY'S QUOTE
-        </Text>
-        <View
-          style={{
-            borderWidth: 2,
-            borderColor: palette.white,
-            width: 30,
-            marginLeft: 20,
-          }}
-        />
-        <Text
-          style={{
-            marginLeft: 20,
-            color: palette.white,
-            marginTop: 20,
-            fontSize: 15,
-            lineHeight: 22,
-          }}>
-          We have no intention of rotating capital{'\n'}out of strong multi-year
-          investments{'\n'}becuase they've recently done well or{'\n'}or because
-          'growth' has outperformed{'\n'}'value'.
-        </Text>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            marginLeft: 20,
-          }}>
-          <Text
-            style={{
-              color: palette.white,
-              fontSize: 15,
-              fontWeight: '700',
-              alignSelf: 'center',
-            }}>
-            Carl Sagan
-          </Text>
-          <View
-            style={{
-              width: 45,
-              height: 45,
-              borderRadius: 50,
-              backgroundColor: 'rgba(255, 255, 255, 0.20)',
-              justifyContent: 'center',
-              alignSelf: 'flex-end',
-              marginRight: 20,
-              marginBottom: 20,
-            }}>
-            <SHAREICONSVG style={{alignSelf: 'center'}} />
-          </View>
+        <Text>Total earnings</Text>
+        <Text>$12,000.09</Text>
+      </View>
+      <View
+        style={{
+          borderBottomWidth: 1,
+          borderBottomColor: palette.mineShaft,
+          width: '60%',
+        }}
+      />
+      <View style={{ marginTop: 5, marginBottom: 5, flexDirection: 'row', justifyContent: 'space-between', width: '90%'}}>
+        <View style={{alignSelf: 'center'}}>
+          <ARROWREDSVG style={{width: 40, alignSelf: 'center'}} />
         </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            width: '90%',
-          }}>
-          <Text style={{color: palette.black, fontSize: 18, fontWeight: '400'}}>
-            Recent transactions
-          </Text>
-          <Text
-            style={{
-              color: palette.teal,
-              fontWeight: '700',
-              fontSize: 14,
-              fontFamily: family.DMSans,
-            }}>
-            View all
-          </Text>
-        </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            width: '90%',
-          }}>
-          <Text>Total earnings</Text>
-          <Text>$12,000.09</Text>
-        </View>
-        <View
-          style={{
-            borderBottomWidth: 1,
-            borderBottomColor: palette.mineShaft,
-            width: '60%',
-          }}
-        />
         <View>
-          <View>
-            <ARROWREDSVG style={{width: 40, alignSelf: 'center'}} />
-          </View>
-          <View>
-            <Text>
-              Received from Bank{'\n'}Account (BOSUN TONY{'\n'}ADEMOSU)
-            </Text>
-            <Text>Jul 6, 2021</Text>
-          </View>
-          <View>
-            <Text>+$320.90</Text>
-          </View>
+          <Text>
+            Received from Bank{'\n'}Account (BOSUN TONY{'\n'}ADEMOSU)
+          </Text>
+          <Text>Jul 6, 2021</Text>
+        </View>
+        <View style={{alignSelf: 'center'}}>
+          <Text>+$320.90</Text>
         </View>
       </View>
+      <View style={{marginBottom: 120}} />
     </ScrollView>
   );
 }
