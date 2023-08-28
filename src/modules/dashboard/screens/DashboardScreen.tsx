@@ -214,7 +214,7 @@ export default function DashboardScreen({navigation}: any) {
         <Text
           style={{
             color: palette.teal,
-            fontWeight: 15,
+            fontWeight: '700',
             // justifyContent: 'center'
             alignSelf: 'center',
             fontSize: 15,
@@ -259,9 +259,16 @@ export default function DashboardScreen({navigation}: any) {
       </Text>
       <ScrollView
         horizontal={true}
-        contentContainerStyle={{alignItems: 'center', width: '90%', marginBottom: 20,}}>
+        contentContainerStyle={{
+          alignItems: 'center',
+          width: '90%',
+          marginBottom: 20,
+        }}>
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate('CreatePlanScreen');
+            console.log('Create investment plan pressed.');
+          }}
           style={{
             height: 243,
             width: 188,
@@ -310,21 +317,21 @@ export default function DashboardScreen({navigation}: any) {
           alignSelf: 'center',
           paddingHorizontal: 12,
           height: 66,
+          shadowColor: 'rgba(113.24, 134.71, 156.19, 0.10)',
+          shadowRadius: 20,
         }}>
         <View
           style={{
             alignSelf: 'center',
             justifyContent: 'center',
-          }}
-        >
+          }}>
           <QUESTIONMARKSVG style={{alignSelf: 'center'}} />
         </View>
         <View
           style={{
             alignSelf: 'center',
-            justifyContent: 'center'
-          }}
-        >
+            justifyContent: 'center',
+          }}>
           <Text>Need help?</Text>
         </View>
         <View
@@ -334,9 +341,16 @@ export default function DashboardScreen({navigation}: any) {
             height: 42,
             width: 123,
             alignSelf: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
           }}>
-          <Text style={{color: palette.white, alignSelf: 'center', textAlign: 'center'}}>Contact us</Text>
+          <Text
+            style={{
+              color: palette.white,
+              alignSelf: 'center',
+              textAlign: 'center',
+            }}>
+            Contact us
+          </Text>
         </View>
       </View>
 
@@ -384,7 +398,13 @@ export default function DashboardScreen({navigation}: any) {
             justifyContent: 'space-between',
             marginLeft: 20,
           }}>
-          <Text style={{color: palette.white, fontSize: 15, fontWeight: '700', alignSelf: 'center'}}>
+          <Text
+            style={{
+              color: palette.white,
+              fontSize: 15,
+              fontWeight: '700',
+              alignSelf: 'center',
+            }}>
             Carl Sagan
           </Text>
           <View

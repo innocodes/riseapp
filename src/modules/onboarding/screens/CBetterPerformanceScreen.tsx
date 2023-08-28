@@ -11,7 +11,7 @@ import {
 import {useFocusEffect} from '@react-navigation/native';
 import {family, palette} from '../../../theme';
 import speedometer from './../../../../assets/images/speedometer.png';
-import PrimaryButton from '../components/PrimaryButton';
+import PrimaryButton from '../../shared/components/PrimaryButton';
 
 export default function CBetterPerformanceScreen({navigation}: any) {
   useFocusEffect(

@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import {family, palette} from '../../../theme';
 import {TextInput} from 'react-native-paper';
-import PrimaryButton from '../components/PrimaryButton';
+import PrimaryButton from '../../shared/components/PrimaryButton';
 
 export default function GSignInScreen({navigation}: any) {
   const [emailAddress, setEmailAddress] = useState('');

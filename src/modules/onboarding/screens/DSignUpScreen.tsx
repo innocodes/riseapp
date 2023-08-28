@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, StatusBar, StyleSheet} from 'react-native';
 import {family, palette} from '../../../theme';
 import {TextInput} from 'react-native-paper';
-import PrimaryButton from '../components/PrimaryButton';
+import PrimaryButton from '../../shared/components/PrimaryButton';
 import CustomCheckbox from '../components/CustomCheckbox';
 
 export default function DSignUpScreen({navigation}: any) {

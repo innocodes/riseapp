@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, StatusBar, StyleSheet} from 'react-native';
 import {family, palette} from '../../../theme';
-import PrimaryButton from '../components/PrimaryButton';
+import PrimaryButton from '../../shared/components/PrimaryButton';
 import ACCOUNTCREATEDSVG from './../../../../assets/images/svgs/AccountCreated.svg';
 
 export default function JPinCreatedScreen({navigation}: any) {
   const handleOkayButton = () => {
-    navigation.navigate('DashboardTabs');
+    navigation.navigate('DashboardStack');
   };
 
   return (
