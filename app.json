@@ -1,4 +1,9 @@
 {
   "name": "RiseApp",
-  "displayName": "RiseApp"
+  "displayName": "RiseApp",
+  "extra": {
+    "eas": {
+      "projectId": "eef036c3-5d18-417a-acef-69c823583ec9"
+    }
+  }
 }

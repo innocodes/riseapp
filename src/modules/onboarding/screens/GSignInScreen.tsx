@@ -90,7 +90,9 @@ export default function GSignInScreen({navigation}: any) {
           textColor={palette.teal}
           backgroundColor={palette.white}
           onPrimaryButtonPress={() => {
-            handleSignUp();
+            {
+              // navigation.navigate('ForgotPasswordScreen');
+            }
           }}
           title="I forgot my password"
           textWeight={'700'}
