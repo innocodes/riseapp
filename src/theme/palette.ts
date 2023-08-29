@@ -20,4 +20,5 @@ export const palette = {
   gullGray: '#94A1AD',
   amour: '#F8E8F4',
   forestGreen: '#27BF41',
+  tallPoppy: '#BF2730',
 };

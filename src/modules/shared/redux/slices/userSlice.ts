@@ -23,7 +23,9 @@ const registerUserAsync = createAsyncThunk(
     const response = await axios.post(SIGN_UP_URL, registrationData);
     console.log('response here', response);
     console.log('response data here', response.data);
-    return response.data;
+    console.log('response data status here', response.data.status);
+    console.log('response status here', response.status);
+    return response.data && response.status;
   },
 );
 
@@ -37,12 +39,12 @@ const userSlice = createSlice({
   extraReducers: builder => {
     builder.addCase(registerUserAsync.fulfilled, (state, action) => {
       // Handle successful response here
-      state. = action.payload;
+      state.data = action.payload;
       console.log('This is the response', action.payload);
     });
     builder.addCase(registerUserAsync.rejected, (state, action) => {
       // Handle error here
-      console.error('Error registering user:', action.error);
+      console.log('Error registering user:', action.error);
     });
   },
 });

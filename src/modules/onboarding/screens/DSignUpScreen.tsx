@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, StatusBar, StyleSheet} from 'react-native';
+import { View, Text, StatusBar, StyleSheet, TouchableOpacity } from "react-native";
 import {family, palette} from '../../../theme';
 import {TextInput} from 'react-native-paper';
 import PrimaryButton from '../../shared/components/PrimaryButton';
 import CustomCheckbox from '../components/CustomCheckbox';
+import GOBACKARROWSVG from "../../../../assets/images/svgs/GoBackArrow.svg";
 
 export default function DSignUpScreen({navigation}: any) {
   const [emailAddress, setEmailAddress] = useState('');
@@ -56,6 +57,20 @@ export default function DSignUpScreen({navigation}: any) {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={palette.white} barStyle={'dark-content'} />
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={{
+          width: 36,
+          height: 36,
+          marginTop: 20,
+          borderRadius: 50,
+          backgroundColor: 'rgba(113, 135, 156, 0.1)',
+          justifyContent: 'center',
+          alignSelf: 'flex-start',
+          marginLeft: 20,
+        }}>
+        <GOBACKARROWSVG style={{width: 40, alignSelf: 'center'}} />
+      </TouchableOpacity>
       <Text style={styles.headingText}>Create an account</Text>
       <Text style={styles.bodyText}>
         Start building your dollar-denominated {'\n'}investment portfolio{' '}
@@ -132,7 +147,7 @@ const styles = StyleSheet.create({
     fontFamily: family.SpaceGrotesk,
     fontSize: 20,
     color: palette.mineShaft,
-    marginTop: 80,
+    marginTop: 40,
     width: '90%',
     fontWeight: '500',
     textAlign: 'left',
