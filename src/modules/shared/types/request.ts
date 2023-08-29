@@ -18,5 +18,3 @@ export interface CreatePlanRequestType {
   targetAmount: string;
   maturityDate: string;
 }
-
-
