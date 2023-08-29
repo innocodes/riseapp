@@ -3,14 +3,20 @@ import {View, Text, StatusBar, StyleSheet} from 'react-native';
 import {family, palette} from '../../../theme';
 import {TextInput} from 'react-native-paper';
 import PrimaryButton from '../../shared/components/PrimaryButton';
-import CustomCheckbox from '../components/CustomCheckbox';
+import {useDispatch} from "react-redux";
+import {registerUserAsync} from "../../shared/redux/slices/userSlice";
 
-export default function EMoreAboutYouScreen({navigation}: any) {
+export default function EMoreAboutYouScreen({navigation, route}: any) {
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [nickname, setNickname] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [proceed, setProceed] = useState(false);
+  const [dateOfBirth, setDateOfBirth] = useState('2000-11-06');
+  const {emailAddress, password} = route?.params;
+  const dispatch = useDispatch();
+
+  console.log(route?.params, ' ===route.params=== ');
 
   useEffect(() => {
     if (
@@ -24,6 +30,16 @@ export default function EMoreAboutYouScreen({navigation}: any) {
   }, [firstname, lastname, nickname, phoneNumber, proceed]);
 
   const handleContinue = () => {
+    const registrationData = {
+      first_name: firstname,
+      last_name: lastname,
+      // username: nickname,
+      email_address: emailAddress,
+      password: password,
+      date_of_birth: dateOfBirth,
+    };
+    // @ts-ignore
+    dispatch(registerUserAsync(registrationData));
     navigation.navigate('FAccountCreatedScreen');
   };
 

@@ -46,7 +46,7 @@ export default function DSignUpScreen({navigation}: any) {
   ]);
 
   const handleSignUp = () => {
-    navigation.navigate('EMoreAboutYouScreen');
+    navigation.navigate('EMoreAboutYouScreen', {emailAddress, password});
   };
 
   // useEffect(() => {

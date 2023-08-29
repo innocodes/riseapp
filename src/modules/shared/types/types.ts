@@ -6,7 +6,7 @@ export interface UserState {
   password: string;
   date_of_birth: string;
   // Optional
-  user_name?: string;
+  username?: string;
   phone_number?: string;
   login_pin?: string;
   country?: string;
