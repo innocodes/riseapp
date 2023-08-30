@@ -1,6 +1,6 @@
 import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
 import axios from 'axios';
-import {SIGN_UP_URL} from '../../utils/constants';
+import {SIGN_UP_URL, SIGN_IN_URL} from '../../utils/constants';
 import {UserState} from '../../types/types';
 
 const initialState: UserState = {
@@ -29,6 +29,21 @@ const registerUserAsync = createAsyncThunk(
   },
 );
 
+const loginUserAsync = createAsyncThunk(
+  'user/login',
+  async (loginData: UserState) => {
+    console.log('inside login user');
+    console.log('this is the login url', SIGN_IN_URL);
+    console.log('this is the login data', loginData);
+    const response = await axios.post(SIGN_IN_URL, loginData);
+    console.log('LOGIN RESPONSE', response);
+    console.log('LOGIN RESPONSE DATA', response.data);
+    console.log('LOGIN RESPONSE STATUS', response.data.status);
+    console.log('LOGIN RESPONSE STATUS', response.status);
+    return response.data && response.status;
+  },
+);
+
 const userSlice = createSlice({
   name: 'user',
   initialState,
@@ -39,16 +54,44 @@ const userSlice = createSlice({
   extraReducers: builder => {
     builder.addCase(registerUserAsync.fulfilled, (state, action) => {
       // Handle successful response here
-      state.data = action.payload;
+      // state.data = action.payload;
       console.log('This is the response', action.payload);
     });
     builder.addCase(registerUserAsync.rejected, (state, action) => {
       // Handle error here
       console.log('Error registering user:', action.error);
     });
+    builder.addCase(loginUserAsync.fulfilled, (state, action) => {
+      // Handle successful response here
+      // state.data = action.payload;
+      state.first_name = action.payload.firtst_name;
+      const {
+        email_address,
+        first_name,
+        id,
+        last_name,
+        token,
+        total_balance,
+        total_returns,
+        username,
+      } = action.payload;
+      state.first_name = first_name;
+      state.email_address = email_address;
+      state.id = id;
+      state.last_name = last_name;
+      state.token = token;
+      state.total_balance = total_balance;
+      state.total_returns = total_returns;
+      state.username = username;
+      console.log('This is the fulfilled login response', action.payload);
+    });
+    builder.addCase(loginUserAsync.rejected, (state, action) => {
+      // Handle error here
+      console.log('Error login in the user:', action.error);
+    });
   },
 });
 
 // export const {registerUser} = userSlice.actions;
-export {registerUserAsync};
+export {registerUserAsync, loginUserAsync};
 export default userSlice.reducer;

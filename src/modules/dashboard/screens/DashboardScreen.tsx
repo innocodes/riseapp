@@ -23,6 +23,8 @@ import SHAREICONSVG from './../../../../assets/images/svgs/ShareIcon.svg';
 import QUESTIONMARKSVG from './../../../../assets/images/svgs/QuestionMark.svg';
 import LinearGradient from 'react-native-linear-gradient';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import { useSelector } from "react-redux";
+import {RootState} from './../../shared/redux';
 
 export default function DashboardScreen({navigation}: any) {
   const [toggleBalance, setToggleBalance] = useState(true);
@@ -36,6 +38,12 @@ export default function DashboardScreen({navigation}: any) {
   const handleOkayButton = () => {
     navigation.navigate('HCreatePinScreen');
   };
+
+
+
+  // Fetching user data from redux store
+  const user = useSelector((state: RootState) => state.user);
+  const {first_name} = user;
 
   // useEffect(() => {
   //   // validatePassword(password);
@@ -83,7 +91,7 @@ export default function DashboardScreen({navigation}: any) {
           <View style={{}}>
             <Text style={{fontSize: 15, lineHeight: 22}}>
               Good morning{'\n'}
-              <Text style={{fontSize: 20, marginTop: 10}}>Deborah</Text>
+              <Text style={{fontSize: 20, marginTop: 10}}>{first_name}</Text>
             </Text>
           </View>
           <View

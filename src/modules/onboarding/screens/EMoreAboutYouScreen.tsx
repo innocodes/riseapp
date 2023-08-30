@@ -240,5 +240,5 @@ const styles = StyleSheet.create({
     color: palette.tallPoppy,
     fontSize: 13,
     textAlign: 'center',
-  }
+  },
 });
