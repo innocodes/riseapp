@@ -10,7 +10,7 @@ import {family, palette} from '../../../theme';
 import {TextInput} from 'react-native-paper';
 import PrimaryButton from '../../shared/components/PrimaryButton';
 import {loginUserAsync} from '../../shared/redux/slices/userSlice';
-import { useDispatch } from "react-redux";
+import {useDispatch} from 'react-redux';
 
 export default function GSignInScreen({navigation}: any) {
   const [emailAddress, setEmailAddress] = useState('');
@@ -55,6 +55,8 @@ export default function GSignInScreen({navigation}: any) {
         setError(
           'Please check provided information. Incorrect login provided.',
         );
+      } else if (response.error.code == 'ERR_NETWORK') {
+        setError('Please check your network connection.');
       }
     } catch (error) {
       setError('An error occurred. Please try again.');
@@ -119,7 +121,8 @@ export default function GSignInScreen({navigation}: any) {
         onPrimaryButtonPress={() => {
           handleLogin();
         }}
-        title="Sign In"
+        title={isLoading ? 'Loading...' : 'Continue'}
+        disabled={false}
       />
 
       <View style={{flex: 1, width: '90%'}}>

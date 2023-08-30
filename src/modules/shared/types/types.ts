@@ -11,5 +11,8 @@ export interface UserState {
   login_pin?: string;
   country?: string;
   logged_in_status?: boolean;
-  login_token?: string;
+  token?: string;
+  id?: string;
+  total_balance?: string;
+  total_returns?: string;
 }

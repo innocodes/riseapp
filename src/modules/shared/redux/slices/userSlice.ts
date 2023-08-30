@@ -54,7 +54,7 @@ const userSlice = createSlice({
   extraReducers: builder => {
     builder.addCase(registerUserAsync.fulfilled, (state, action) => {
       // Handle successful response here
-      state.data = action.payload;
+      // state.data = action.payload;
       console.log('This is the response', action.payload);
     });
     builder.addCase(registerUserAsync.rejected, (state, action) => {
@@ -63,7 +63,26 @@ const userSlice = createSlice({
     });
     builder.addCase(loginUserAsync.fulfilled, (state, action) => {
       // Handle successful response here
-      state.data = action.payload;
+      // state.data = action.payload;
+      state.first_name = action.payload.firtst_name;
+      const {
+        email_address,
+        first_name,
+        id,
+        last_name,
+        token,
+        total_balance,
+        total_returns,
+        username,
+      } = action.payload;
+      state.first_name = first_name;
+      state.email_address = email_address;
+      state.id = id;
+      state.last_name = last_name;
+      state.token = token;
+      state.total_balance = total_balance;
+      state.total_returns = total_returns;
+      state.username = username;
       console.log('This is the fulfilled login response', action.payload);
     });
     builder.addCase(loginUserAsync.rejected, (state, action) => {
