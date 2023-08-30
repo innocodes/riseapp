@@ -9,6 +9,8 @@ import {
 import {family, palette} from '../../../theme';
 import {TextInput} from 'react-native-paper';
 import PrimaryButton from '../../shared/components/PrimaryButton';
+import {loginUserAsync} from '../../shared/redux/slices/userSlice';
+import { useDispatch } from "react-redux";
 
 export default function GSignInScreen({navigation}: any) {
   const [emailAddress, setEmailAddress] = useState('');
@@ -16,6 +18,11 @@ export default function GSignInScreen({navigation}: any) {
   const [proceed, setProceed] = useState(false);
   const [hidePassword, setHidePassword] = useState(false);
   false;
+  const [buttonBgColor, setButtonBgColor] = useState(palette.teal);
+  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+  const [error, setError] = useState<string | null>(null);
+  const [responseStatus, setResponseStatus] = useState<number | null>(null);
 
   const handlePasswordChange = (newPassword: string) => {
     setPassword(newPassword);
@@ -27,8 +34,34 @@ export default function GSignInScreen({navigation}: any) {
     }
   }, [proceed, emailAddress, password]);
 
-  const handleSignUp = () => {
-    navigation.navigate('DashboardStack');
+  const handleLogin = async () => {
+    setIsLoading(true);
+    setError(null);
+    setButtonBgColor('rgba(8, 152, 160, 0.3)');
+
+    const loginData = {
+      email_address: emailAddress,
+      password: password,
+    };
+
+    try {
+      // @ts-ignore
+      const response = await dispatch(loginUserAsync(loginData));
+      console.log('response in more about you screen', response);
+      setResponseStatus(response.status);
+      if (response.payload == '200') {
+        navigation.navigate('DashboardStack');
+      } else if (response.error.code == 'ERR_BAD_REQUEST') {
+        setError(
+          'Please check provided information. Incorrect login provided.',
+        );
+      }
+    } catch (error) {
+      setError('An error occurred. Please try again.');
+    } finally {
+      setIsLoading(false); // Set loading back to false after API call
+      setButtonBgColor(palette.teal);
+    }
   };
 
   // useEffect(() => {
@@ -76,11 +109,15 @@ export default function GSignInScreen({navigation}: any) {
         }
       />
 
+      <View style={{marginVertical: 10, width: '90%'}}>
+        {error && <Text style={styles.errorText}>{error}</Text>}
+      </View>
+
       <PrimaryButton
         textColor={palette.white}
         backgroundColor={proceed ? palette.teal : 'rgba(8, 152, 160, 0.3)'}
         onPrimaryButtonPress={() => {
-          handleSignUp();
+          handleLogin();
         }}
         title="Sign In"
       />
@@ -155,6 +192,11 @@ const styles = StyleSheet.create({
   },
   noAccountText: {
     fontWeight: '700',
+    textAlign: 'center',
+  },
+  errorText: {
+    color: palette.tallPoppy,
+    fontSize: 13,
     textAlign: 'center',
   },
 });

@@ -29,16 +29,16 @@ export default function AccountScreen({navigation}: any) {
           width: '90%',
         }}>
         <View>
-          <Text style={styles.totalEarningsTitle}>Dear User, • MANAGE YOUR ACCOUNT</Text>
+          <Text style={styles.totalEarningsTitle}>
+            Dear User, • MANAGE YOUR ACCOUNT
+          </Text>
           <Text style={styles.totalEarningsBody}>Log out.</Text>
         </View>
         <FRONTARROWSVG style={{width: 80, height: 80, alignSelf: 'center'}} />
       </TouchableOpacity>
       <View style={styles.straightRule} />
       {/*<Text style={styles.headingText}>My Account</Text>*/}
-      {/*<Text style={styles.bodyText}>Coming nnnsoon.</Text>*/}
-
-
+      {/*<Text style={styles.bodyText}>Coming soon.</Text>*/}
 
       <View style={{marginBottom: 30, width: '90%'}}>
         {/*<PrimaryButton*/}
