@@ -40,7 +40,8 @@ const loginUserAsync = createAsyncThunk(
     console.log('LOGIN RESPONSE DATA', response.data);
     console.log('LOGIN RESPONSE STATUS', response.data.status);
     console.log('LOGIN RESPONSE STATUS', response.status);
-    return response.data && response.status;
+    return response;
+      // && response.status;
   },
 );
 
@@ -48,7 +49,6 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-
     // Other reducers here:
   },
   extraReducers: builder => {
@@ -64,7 +64,6 @@ const userSlice = createSlice({
     builder.addCase(loginUserAsync.fulfilled, (state, action) => {
       // Handle successful response here
       // state.data = action.payload;
-      state.first_name = action.payload.firtst_name;
       const {
         email_address,
         first_name,
@@ -74,7 +73,7 @@ const userSlice = createSlice({
         total_balance,
         total_returns,
         username,
-      } = action.payload;
+      } = action.payload.data;
       state.first_name = first_name;
       state.email_address = email_address;
       state.id = id;
@@ -83,11 +82,15 @@ const userSlice = createSlice({
       state.total_balance = total_balance;
       state.total_returns = total_returns;
       state.username = username;
-      console.log('This is the fulfilled login response', action.payload);
+      console.log(
+        'This is the fulfilled login response data',
+        action.payload.data,
+      );
+      console.log('User first name', first_name);
     });
     builder.addCase(loginUserAsync.rejected, (state, action) => {
       // Handle error here
-      console.log('Error login in the user:', action.error);
+      console.log('Error logging in the user:', action.error);
     });
   },
 });

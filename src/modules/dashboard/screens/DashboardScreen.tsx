@@ -43,7 +43,9 @@ export default function DashboardScreen({navigation}: any) {
 
   // Fetching user data from redux store
   const user = useSelector((state: RootState) => state.user);
-  const {first_name} = user;
+  const {first_name, total_returns, total_balance} = user;
+  console.log('first_name here', first_name);
+  console.log('user object here', user);
 
   // useEffect(() => {
   //   // validatePassword(password);
@@ -160,7 +162,7 @@ export default function DashboardScreen({navigation}: any) {
                   fontWeight: '300',
                   color: palette.mineShaftTwo,
                 }}>
-                ${balance}
+                ${total_balance}
               </Text>
             </View>
             <View

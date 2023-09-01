@@ -4,7 +4,7 @@ import {family, palette} from '../../../theme';
 import {TextInput} from 'react-native-paper';
 import PrimaryButton from '../../shared/components/PrimaryButton';
 import CustomCheckbox from '../components/CustomCheckbox';
-import GOBACKARROWSVG from "../../../../assets/images/svgs/GoBackArrow.svg";
+import GOBACKARROWSVG from '../../../../assets/images/svgs/GoBackArrow.svg';
 
 export default function DSignUpScreen({navigation}: any) {
   const [emailAddress, setEmailAddress] = useState('');

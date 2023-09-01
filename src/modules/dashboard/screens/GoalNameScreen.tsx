@@ -13,7 +13,7 @@ import {TextInput} from 'react-native-paper';
 
 export default function GoalNameScreen({navigation}: any) {
   const handleContinueButton = () => {
-    navigation.navigate('TargetAmountScreen');
+    navigation.navigate('TargetAmountScreen', {savingGoal});
   };
 
   const [savingGoal, setSavingGoal] = useState('');

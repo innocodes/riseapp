@@ -47,9 +47,16 @@ export default function GSignInScreen({navigation}: any) {
     try {
       // @ts-ignore
       const response = await dispatch(loginUserAsync(loginData));
-      console.log('response in more about you screen', response);
+      console.log('response in GSignIn screen', response);
+      console.log('response.payload in GSignIn screen', response.payload);
+      console.log('response.arg in GSignIn screen', response.arg);
+      console.log(
+        'response.payload.status in GSignIn screen',
+        response.payload.status,
+      );
       setResponseStatus(response.status);
-      if (response.payload == '200') {
+      console.log('response status', response.status);
+      if (response.payload.status == '200') {
         navigation.navigate('DashboardStack');
       } else if (response.error.code == 'ERR_BAD_REQUEST') {
         setError(
@@ -117,7 +124,7 @@ export default function GSignInScreen({navigation}: any) {
 
       <PrimaryButton
         textColor={palette.white}
-        backgroundColor={proceed ? palette.teal : 'rgba(8, 152, 160, 0.3)'}
+        backgroundColor={proceed ? buttonBgColor : 'rgba(8, 152, 160, 0.3)'}
         onPrimaryButtonPress={() => {
           handleLogin();
         }}

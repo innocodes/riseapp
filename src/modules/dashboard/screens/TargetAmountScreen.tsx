@@ -11,9 +11,10 @@ import PrimaryButton from '../../shared/components/PrimaryButton';
 import BACKARROWSVG from './../../../../assets/images/svgs/LeftBackArrow.svg';
 import {TextInput} from 'react-native-paper';
 
-export default function TargetAmountScreen({navigation}: any) {
+export default function TargetAmountScreen({navigation, route}: any) {
+  const {savingGoal} = route?.params;
   const handleContinueButton = () => {
-    navigation.navigate('TargetDateScreen');
+    navigation.navigate('TargetDateScreen', {savingGoal, targetAmount});
   };
 
   const [targetAmount, setTargetAmount] = useState('');

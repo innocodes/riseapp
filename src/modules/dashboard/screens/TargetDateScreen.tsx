@@ -11,13 +11,17 @@ import PrimaryButton from '../../shared/components/PrimaryButton';
 import BACKARROWSVG from './../../../../assets/images/svgs/LeftBackArrow.svg';
 import {TextInput} from 'react-native-paper';
 
-export default function TargetDateScreen({navigation}: any) {
-  const handleContinueButton = () => {
-    navigation.navigate('ReviewScreen');
-  };
-
+export default function TargetDateScreen({navigation, route}: any) {
   const [withdrawDate, setWithdrawDate] = useState('');
+  const {savingGoal, targetAmount} = route?.params;
 
+  const handleContinueButton = () => {
+    navigation.navigate('ReviewScreen', {
+      savingGoal,
+      targetAmount,
+      withdrawDate,
+    });
+  };
 
   return (
     <View style={styles.container}>
@@ -67,28 +71,38 @@ export default function TargetDateScreen({navigation}: any) {
         }}>
         Question 3 of 3
       </Text>
-      <View
-        style={{width: '90%', alignItems: 'center', marginTop: 20,}}
-      >
+      <View style={{width: '90%', alignItems: 'center', marginTop: 20}}>
         <View style={{flexDirection: 'row'}}>
-          <View style={{borderTopLeftRadius: 50, borderBottomLeftRadius: 50, backgroundColor: palette.teal, width: '34%', height: 10}}></View>
-          <View style={{backgroundColor: palette.teal, width: '32%'}}></View>
-          <View style={{borderTopRightRadius: 50, borderBottomRightRadius: 50, backgroundColor: palette.teal, width: '34%'}}></View>
-
+          <View
+            style={{
+              borderTopLeftRadius: 50,
+              borderBottomLeftRadius: 50,
+              backgroundColor: palette.teal,
+              width: '34%',
+              height: 10,
+            }}
+          />
+          <View style={{backgroundColor: palette.teal, width: '32%'}} />
+          <View
+            style={{
+              borderTopRightRadius: 50,
+              borderBottomRightRadius: 50,
+              backgroundColor: palette.teal,
+              width: '34%',
+            }}
+          />
         </View>
       </View>
-
 
       <View
         style={{
           marginTop: 25,
           width: '90%',
-
         }}>
-        <View style={{
-          width: '100%',
-
-        }}>
+        <View
+          style={{
+            width: '100%',
+          }}>
           <Text style={styles.textTitle}>When do you want to withdraw?</Text>
           <TextInput
             style={styles.textInputBody}
@@ -146,7 +160,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     flex: 1,
   },
-  textTitle: {marginTop: 30, fontSize: 15, fontWeight: '700', color: palette.mineShaft},
+  textTitle: {
+    marginTop: 30,
+    fontSize: 15,
+    fontWeight: '700',
+    color: palette.mineShaft,
+  },
   textInputBody: {
     marginTop: 10,
     width: '100%',
