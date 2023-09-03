@@ -14,12 +14,14 @@ import BACKARROWSVG from './../../../../assets/images/svgs/LeftBackArrow.svg';
 import CAUTIONSVG from './../../../../assets/images/svgs/informationOutline.svg';
 import PLANCHART from './../../../../assets/images/SCR-20230828-rxmb-2.png';
 
-export default function ReviewScreen({navigation}: any) {
+export default function ReviewScreen({navigation, route}: any) {
   // const handleContinueButton = () => {
   //   navigation.navigate('ReviewScreen');
   // };
 
-  const [withdrawDate, setWithdrawDate] = useState('');
+  const {savingGoal, targetAmount, withdrawDate} = route?.params;
+
+  // const [withdrawDate, setWithdrawDate] = useState('');
   const [amount, setAmount] = useState('10,930.75');
   const [investmentAmount, setInvestmentAmount] = useState('50,400');
   const [returnsAmount, setReturnsAmount] = useState('20,803');
@@ -77,7 +79,7 @@ export default function ReviewScreen({navigation}: any) {
           textAlign: 'center',
           width: '90%',
         }}>
-        Kate Ventures
+        {savingGoal}
       </Text>
       <Text
         style={{
@@ -88,7 +90,7 @@ export default function ReviewScreen({navigation}: any) {
           width: '90%',
           color: palette.black,
         }}>
-        ${amount}
+        ${targetAmount}
       </Text>
       <Text
         style={{
@@ -100,9 +102,15 @@ export default function ReviewScreen({navigation}: any) {
           width: '90%',
           fontWeight: '400',
         }}>
-        by 20 June 2021
+        by {withdrawDate}
       </Text>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between', width: '80%', marginTop: 20,}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '80%',
+          marginTop: 20,
+        }}>
         <Text
           style={{
             fontSize: 15,
